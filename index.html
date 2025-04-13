@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ТриТолстяка - Доставка еды</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">ТриТолстяка</a>
+        <div class="nav-links">
+          <a href="#home">Главная</a>
+          <a href="#menu">Меню</a>
+          <a href="#about">О нас</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+        <div class="cart-icon" id="cart-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Быстрая доставка любимой еды</h1>
+      <p>Закажите вкусную еду прямо к вашему дому всего за несколько кликов</p>
+      <div class="search-bar">
+        <input type="text" placeholder="Что вы хотите заказать сегодня?" />
+        <button>Найти</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Категории</h2>
+      <div class="category-list">
+        <div class="category active" data-category="all">Все</div>
+        <div class="category" data-category="pizza">Пицца</div>
+        <div class="category" data-category="burger">Бургеры</div>
+        <div class="category" data-category="sushi">Суши</div>
+        <div class="category" data-category="pasta">Паста</div>
+        <div class="category" data-category="dessert">Десерты</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2 class="section-title">Популярные блюда</h2>
+      <div class="menu-grid" id="menu-grid">
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">О нас</h2>
+      <p>ТриТолстяка — это современный сервис доставки еды. Мы сотрудничаем с лучшими ресторанами, чтобы вы могли заказать свежие и вкусные блюда прямо к вашему столу.</p>
+      <p>Наша миссия — обеспечить удобство, оперативность и высокое качество обслуживания для всех наших клиентов.</p>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts">
+    <div class="container">
+      <h2 class="section-title">Контакты</h2>
+      <p>Если у вас есть вопросы или предложения, свяжитесь с нами:</p>
+      <ul>
+        <li>Email: support@foodfast.ru</li>
+        <li>Телефон: +7 (495) 123-45-67</li>
+        <li>Адрес: ул. Примерная, 10, Москва</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <div class="cart-title">Корзина</div>
+      <button class="close-cart" id="close-cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="empty-cart">Ваша корзина пуста</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Итого:</span>
+        <span id="cart-total">0 ₽</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" disabled>Оформить заказ</button>
+    </div>
+  </div>
+
+<div class="order-form-modal" id="order-form-modal">
+    <div class="order-form-header">
+      <div class="order-form-title">Оформление заказа</div>
+      <button class="close-order-form" id="close-order-form">&times;</button>
+    </div>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="customer-name">Имя</label>
+        <input type="text" id="customer-name" placeholder="Введите ваше имя" required>
+      </div>
+      <div class="form-group">
+        <label for="customer-phone">Телефон</label>
+        <input type="tel" id="customer-phone" placeholder="+7 (___) ___-__-__" required>
+      </div>
+      
+      <fieldset class="address-group">
+        <legend>Адрес доставки</legend>
+        
+        <!-- Первая строка: улица и дом -->
+        <div class="address-row">
+          <div class="form-group">
+            <label for="street">Улица</label>
+            <input type="text" id="street" placeholder="Введите название улицы" required>
+          </div>
+          <div class="form-group">
+            <label for="house">Дом</label>
+            <input type="text" id="house" placeholder="№ дома" required>
+          </div>
+        </div>
+        
+        <!-- Вторая строка: подъезд и квартира -->
+        <div class="address-row-second">
+          <div class="form-group">
+            <label for="entrance">Подъезд</label>
+            <input type="text" id="entrance" placeholder="№ подъезда" required>
+          </div>
+          <div class="form-group">
+            <label for="apartment">Квартира</label>
+            <input type="text" id="apartment" placeholder="№ квартиры" required>
+          </div>
+        </div>
+      </fieldset>
+      
+      <div class="form-group">
+        <label for="comment">Комментарий к заказу</label>
+        <textarea id="comment" placeholder="Дополнительная информация для курьера"></textarea>
+      </div>
+      
+      <div class="form-group toggle-group">
+        <label for="payment-method">Безналичный расчёт</label>
+        <div class="toggle-switch">
+          <input type="checkbox" id="payment-method">
+          <span class="toggle-slider"></span>
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-order-btn">Отправить заказ</button>
+    </form>
+  </div>
+
+  <div class="success-modal" id="success-modal">
+    <div class="success-icon">✓</div>
+    <h3 class="success-title">Заказ принят!</h3>
+    <p class="success-message">Ваш заказ успешно оформлен. Ожидайте доставку в течение 30-45 минут.</p>
+    <button class="success-btn" id="success-btn">Продолжить покупки</button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#about">О компании</a>
+        <a href="#delivery">Доставка и оплата</a>
+        <a href="#privacy">Политика конфиденциальности</a>
+        <a href="#career">Карьера</a>
+      </div>
+      <p class="copyright">© 2025 ТриТолстяка. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
