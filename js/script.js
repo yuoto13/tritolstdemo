@@ -5,7 +5,7 @@ const menuData = [
       title: "Пицца Маргарита",
       description: "Томатный соус, моцарелла, свежий базилик",
       price: 399,
-      image: "/api/placeholder/400/320",
+      image: "static/images/pizza/margarita.avif",
       category: "pizza"
     },
     {
@@ -21,7 +21,7 @@ const menuData = [
       title: "Сет Калифорния",
       description: "32 кусочка, филадельфия, калифорния, унаги",
       price: 1299,
-      image: "/api/placeholder/400/320",
+      image: "static/images/set/set1.webp",
       category: "sushi"
     },
     {
@@ -45,7 +45,7 @@ const menuData = [
       title: "Пицца Пепперони",
       description: "Томатный соус, моцарелла, пепперони",
       price: 449,
-      image: "/api/placeholder/400/320",
+      image: "static/images/pizza/peperoni.avif",
       category: "pizza"
     },
     {
@@ -61,7 +61,7 @@ const menuData = [
       title: "Ролл Филадельфия",
       description: "Лосось, сливочный сыр, огурец, авокадо",
       price: 399,
-      image: "/api/placeholder/400/320",
+      image: "static/images/roll/phila.webp",
       category: "sushi"
     }
   ];
